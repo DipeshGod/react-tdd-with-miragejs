@@ -8,7 +8,8 @@ if (import.meta.env.MODE !== 'production') {
 }
 
 function App() {
-  let [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     fetch('/api/users')
@@ -16,20 +17,22 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        console.log('data', data);
-        setUsers(data.users.length);
+        setUsers(data.users);
       })
       .catch((err) => {
-        console.log('handle errors', err);
+        setError('error vayo');
       });
   }, []);
 
   return (
     <div>
       <h1>Dashboard</h1>
+
       <ul data-testid="users">
-        {users.length > 0 &&
-          users.map((user: any) => <li key={user.id}>{user.name}</li>)}
+        {users.length > 0
+          ? users.map((user: any) => <li key={user.id}>{user.name}</li>)
+          : 'loading'}
+        {error.length > 0 ? 'errored' : null}
       </ul>
     </div>
   );

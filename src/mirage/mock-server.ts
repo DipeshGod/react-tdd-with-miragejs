@@ -8,10 +8,10 @@ const MockServer = ({ environment = 'development' }) => {
     environment,
     models,
     factories,
-    seeds(server) {
-      server.createList('user', 10);
-      server.create('user', { name: 'Dipesh', id: '2010' });
+    async seeds(server) {
+      await server.createList('user', 5);
     },
+    // timing: 3000,
   });
   // logging
   server.logging = true;
