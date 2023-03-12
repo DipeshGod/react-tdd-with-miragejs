@@ -2,7 +2,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { describe } from 'vitest';
 import App from './App';
 
-import { Server, createServer } from 'miragejs';
+import { Server } from 'miragejs';
 import { MockServer } from './mirage/mock-server';
 
 let server: Server;
