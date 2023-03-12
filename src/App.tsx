@@ -17,7 +17,7 @@ function App() {
       })
       .then((data) => {
         console.log('data', data);
-        setUsers(data.users);
+        setUsers(data.users.length);
       })
       .catch((err) => {
         console.log('handle errors', err);
@@ -25,10 +25,13 @@ function App() {
   }, []);
 
   return (
-    <ul>
-      {users.length > 0 &&
-        users.map((user: any) => <li key={user.id}>{user.name}</li>)}
-    </ul>
+    <div>
+      <h1>Dashboard</h1>
+      <ul data-testid="users">
+        {users.length > 0 &&
+          users.map((user: any) => <li key={user.id}>{user.name}</li>)}
+      </ul>
+    </div>
   );
 }
 

@@ -34,6 +34,8 @@ const MockServer = ({ environment = 'development' }) => {
   server.passthrough();
   // console.log({server})
   console.log({ dump: server.db.dump() });
+
+  return server;
 };
 
 export { MockServer };
