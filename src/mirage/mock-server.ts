@@ -8,8 +8,8 @@ const MockServer = ({ environment = 'development' }) => {
     environment,
     models,
     factories,
-    async seeds(server) {
-      await server.createList('user', 5);
+    seeds(server) {
+      server.createList('user', 5);
     },
     // timing: 3000,
   });
