@@ -9,7 +9,13 @@ const MockServer = ({ environment = 'development' }) => {
     models,
     factories,
     seeds(server) {
-      server.createList('user', 5);
+      server.createList('user', 10);
+      // server.db.loadData({
+      //   users: [
+      //     { id: '1', name: 'dipesh' },
+      //     { id: '2', name: 'rupesh' },
+      //   ],
+      // });
     },
     // timing: 3000,
   });
