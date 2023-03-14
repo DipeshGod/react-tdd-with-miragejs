@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { MockServer } from './mirage/mock-server';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const environment = process.env.NODE_ENV;
 
@@ -37,6 +38,7 @@ function App() {
         {error.length > 0 ? 'errored' : null}
       </ul>
       <Button variant="contained">Hello World</Button>
+      <Link to="/dashboard">Dashboard</Link>
     </div>
   );
 }
