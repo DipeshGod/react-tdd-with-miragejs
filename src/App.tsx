@@ -39,6 +39,7 @@ function App() {
       </ul>
       <Button variant="contained">Hello World</Button>
       <Link to="/dashboard">Dashboard</Link>
+      <Link to="/auth/login">Login</Link>
     </div>
   );
 }
